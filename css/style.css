@@ -1,6 +1,6 @@
 /* FONTS */
 
-@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=bungee&display=swap");
 
 /* GLOBAL STYLES */
 
@@ -8,10 +8,10 @@
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Arvo', serif;
   --font-code: 'Roboto', monospace;
-  --bg-color: #00163f;
-  --font-color: #ffffff;
-  --btn-bg-color: #ffffff;
-  --accent-color: #be7efe;
+  --bg-color: #000000;
+  --font-color: #ff00fb;
+  --btn-bg-color: #4e514e;
+  --accent-color: #ff00e1;
   --header-shadow: #000 0px 0px 5px;
 }
 
@@ -22,6 +22,7 @@
 }
 
 body {
+  background-image: url("/images/my-pictures/Starry\ Background.gif");
   background-color: var(--bg-color);
   display: flex;
   flex-flow: column;
@@ -33,7 +34,6 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 960px;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
@@ -86,9 +86,67 @@ header .container {
 }
 
 .hero-btn {
-  border-radius: 4px;
+  /* border-radius: 4px;
   font-size: 1.2rem;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 3rem; */
+    font-family: bungee;
+    font-size: 20px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: rgb(255, 0, 0);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.hero-btn:before {
+  content: '';
+  background: linear-gradient(45deg, #ff008c, #ff3da8, #ff57b3, #660ef3, #3d00b8, #320160, #bc03ff, #c936ff, #d154ff);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.hero-btn:active {
+  color: #000
+}
+
+.hero-btn:active:after {
+  background: transparent;
+}
+
+.hero-btn:hover:before {
+  opacity: 1;
+}
+
+.hero-btn:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
 
 /* COUNTDOWN SECTION */
