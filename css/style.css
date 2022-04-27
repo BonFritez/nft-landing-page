@@ -5,9 +5,9 @@
 /* GLOBAL STYLES */
 
 :root {
-  --font-primary: 'Poppins', sans-serif;
-  --font-secondary: 'Arvo', serif;
-  --font-code: 'Roboto', monospace;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Arvo", serif;
+  --font-code: "Roboto", monospace;
   --bg-color: #000000;
   --font-color: #ff00fb;
   --btn-bg-color: #4e514e;
@@ -68,7 +68,7 @@ header .container {
   font-weight: 700;
   color: #313133;
   background: #ee00ff;
-background: linear-gradient(90deg, rgb(247, 0, 255) 0%, rgb(98, 0, 255) 100%);
+  background: linear-gradient(90deg, rgb(247, 0, 255) 0%, rgb(98, 0, 255) 100%);
   border: none;
   border-radius: 1000px;
   box-shadow: 12px 12px 24px rgba(181, 0, 184, 0.64);
@@ -77,10 +77,10 @@ background: linear-gradient(90deg, rgb(247, 0, 255) 0%, rgb(98, 0, 255) 100%);
   outline: none;
   position: relative;
   padding: 5px;
-  }
+}
 
 .wallet-btn::before {
-content: '';
+  content: "";
   border-radius: 1000px;
   min-width: calc(200px + 12px);
   min-height: calc(50px + 12px);
@@ -91,35 +91,19 @@ content: '';
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all .3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.wallet-btn:hover, .button:focus {
+.wallet-btn:hover,
+.button:focus {
   color: #313133;
   transform: translateY(-6px);
 }
 
-.wallet-btn:hover::before, button:focus::before {
+.wallet-btn:hover::before,
+button:focus::before {
   opacity: 1;
-} 
-
-/* .wallet-btn::after {
-  content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid #ff0000;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: ring 1.5s infinite;
-} */
-
-/* .wallet-btn:hover::after, button:focus::after {
-  animation: none;
-  display: none;
-} */
+}
 
 @keyframes ring {
   0% {
@@ -134,53 +118,37 @@ content: '';
   }
 }
 
-/* .btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--btn-bg-color);
-  color: var(--accent-color);
-  font-family: var(--font-secondary);
-  font-style: bungee;
-  font-weight: bold;
-  font-size: 1rem;
-  text-transform: capitalize;
-  transition: all 0.3s ease;
-  box-shadow: 4px 4px 0 0 var(--accent-color);
+.hero-btn {
+  font-family: bungee;
+  font-size: 20px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
   cursor: pointer;
   position: relative;
-  text-decoration: none;
-  outline: none;
-}
-.btn:hover {
-  box-shadow: none;
-}
-
-.wallet-btn {
-  border-radius: 5rem;
-  margin-left: 2rem;
-  border-color: transparent;
-} */
-
-.hero-btn {
-    font-family: bungee;
-    font-size: 20px;
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  z-index: 0;
+  border-radius: 10px;
 }
 .hero-btn:before {
-  content: '';
-  background: linear-gradient(45deg, #ff008c, #ff3da8, #ff57b3, #660ef3, #3d00b8, #320160, #bc03ff, #c936ff, #d154ff);
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff008c,
+    #ff3da8,
+    #ff57b3,
+    #660ef3,
+    #3d00b8,
+    #320160,
+    #bc03ff,
+    #c936ff,
+    #d154ff
+  );
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -188,12 +156,12 @@ content: '';
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 .hero-btn:active {
-  color: #000
+  color: #000;
 }
 
 .hero-btn:active:after {
@@ -206,7 +174,7 @@ content: '';
 
 .hero-btn:after {
   z-index: -1;
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -217,9 +185,15 @@ content: '';
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* COUNTDOWN SECTION */
@@ -238,7 +212,7 @@ section {
 
 .countdown ul {
   display: flex;
-  gap: 2rem
+  gap: 2rem;
 }
 .countdown .clock-item {
   list-style: none;
@@ -311,4 +285,3 @@ section {
     font-size: 1rem;
   }
 }
- 
