@@ -22,7 +22,7 @@
 }
 
 body {
-  background-image: url("/images/my-pictures/Starry\ Background.gif");
+  background-image: url("/images/my-pictures/starry-night.gif");
   background-color: var(--bg-color);
   display: flex;
   flex-flow: column;
@@ -58,13 +58,89 @@ header .container {
 
 /* BUTTONS */
 
-.btn {
+.wallet-btn {
+  min-width: 200px;
+  min-height: 50px;
+  font-family: bungee;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #ee00ff;
+background: linear-gradient(90deg, rgb(247, 0, 255) 0%, rgb(98, 0, 255) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(181, 0, 184, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 5px;
+  }
+
+.wallet-btn::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(200px + 12px);
+  min-height: calc(50px + 12px);
+  border: 6px solid #ff00c8;
+  box-shadow: 0 0 60px rgba(179, 0, 176, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.wallet-btn:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.wallet-btn:hover::before, button:focus::before {
+  opacity: 1;
+} 
+
+/* .wallet-btn::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #ff0000;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+} */
+
+/* .wallet-btn:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+} */
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* .btn {
   display: inline-block;
   padding: 1rem 2rem;
   background: var(--btn-bg-color);
   color: var(--accent-color);
   font-family: var(--font-secondary);
-  font-style: italic;
+  font-style: bungee;
   font-weight: bold;
   font-size: 1rem;
   text-transform: capitalize;
@@ -83,19 +159,16 @@ header .container {
   border-radius: 5rem;
   margin-left: 2rem;
   border-color: transparent;
-}
+} */
 
 .hero-btn {
-  /* border-radius: 4px;
-  font-size: 1.2rem;
-  padding: 1.5rem 3rem; */
     font-family: bungee;
     font-size: 20px;
     width: 220px;
     height: 50px;
     border: none;
     outline: none;
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     background: #111;
     cursor: pointer;
     position: relative;
